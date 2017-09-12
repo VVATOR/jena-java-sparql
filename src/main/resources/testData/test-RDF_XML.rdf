@@ -1,0 +1,2617 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:food="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#"
+    xmlns:vin="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine"/>
+  <owl:Ontology rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine">
+    <rdfs:label>Wine Ontology</rdfs:label>
+    <rdfs:comment>Derived from the DAML Wine ontology at 
+      http://ontolingua.stanford.edu/doc/chimaera/ontologies/wines.daml
+      Substantially changed, in particular the Region based relations.
+    </rdfs:comment>
+    <owl:imports rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food"/>
+    <owl:priorVersion rdf:resource="http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine"/>
+    <rdfs:comment>An example OWL ontology</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MedocRegion">
+            <vin:locatedIn>
+              <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BordeauxRegion">
+                <vin:locatedIn>
+                  <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchRegion"/>
+                </vin:locatedIn>
+              </vin:Region>
+            </vin:locatedIn>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineSugar>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineColor>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor">
+    <owl:unionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor"/>
+    </owl:unionOf>
+    <rdfs:comment>Made WineDescriptor unionType of tastes and color</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineColor>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineBody>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineBody>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineFlavor>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SangioveseGrape"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChiantiRegion">
+            <vin:locatedIn>
+              <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianRegion"/>
+            </vin:locatedIn>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianWine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor">
+    <owl:oneOf rdf:parseType="Collection">
+      <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+      <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+      </vin:WineColor>
+      <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+    </owl:oneOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRedWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWine"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine"/>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteTableWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TableWine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Semillon">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonGrape">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineGrape>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TableWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Anjou">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AnjouRegion">
+            <vin:locatedIn>
+              <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LoireRegion">
+                <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchRegion"/>
+              </vin:Region>
+            </vin:locatedIn>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry">
+            <owl:differentFrom>
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet">
+                <owl:differentFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineSugar>
+            </owl:differentFrom>
+            <owl:differentFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineSugar>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineFlavor>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AmericanWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#USRegion"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineFlavor">
+    <owl:oneOf rdf:parseType="Collection">
+      <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+      <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+      <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+      </vin:WineFlavor>
+    </owl:oneOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BourgogneRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MuscadetRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LoireRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlancGrape">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineGrape>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineSugar">
+    <owl:oneOf rdf:parseType="Collection">
+      <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+      <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+      <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    </owl:oneOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#IceWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineBody>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Gamay">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GamayGrape"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBordeaux">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonGrape"/>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlancGrape">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineGrape>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine"/>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LoireRegion"/>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBurgundy">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChardonnayGrape"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine"/>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchRegion"/>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#USRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Margaux">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MargauxRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MedocRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MerlotGrape">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineGrape>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineGrape">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Grape"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotNoir">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotNoirGrape"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRiesling">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RoseWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFranc">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFrancGrape">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineGrape>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Pauillac">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PauillacRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MedocRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignonGrape">
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+          </vin:WineGrape>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meritage">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignonGrape"/>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFrancGrape"/>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MalbecGrape">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineGrape>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteVerdotGrape">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineGrape>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MerlotGrape"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >2</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FullBodiedWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sauternes">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauterneRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BordeauxRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AlsatianWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AlsaceRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteLoire">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlancGrape">
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+              </vin:WineGrape>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlancGrape"/>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlancGrape"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine"/>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetRiesling">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chardonnay">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChardonnayGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedTableWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TableWine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBordeaux">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine"/>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignonGrape"/>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MerlotGrape"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Vintage">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotesDOr">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBurgundy"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotesDOrRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BourgogneRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RieslingGrape"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Merlot">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MerlotGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignonGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TexasWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TexasRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#USRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWhiteWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWine"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine"/>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EarlyHarvest"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Port">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PortugalRegion"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteNonSweetWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine"/>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilion">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilionRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BordeauxRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignonGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlanc">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlancGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine">
+    <rdfs:label xml:lang="fr">vin</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Winery"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">wine</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlanc">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlancGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Zinfandel">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ZinfandelGrape"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BeaujolaisRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GamayGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineBody">
+    <owl:oneOf rdf:parseType="Collection">
+      <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+      <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+      <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    </owl:oneOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonGrape"/>
+              <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlancGrape"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrah">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:WineGrape rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrahGrape"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+              <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+              <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianRegion"/>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BordeauxRegion"/>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#VintageYear"/>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EarlyHarvest">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:oneOf rdf:parseType="Collection">
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+              <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBurgundy">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy"/>
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine"/>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotNoirGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meursault">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBurgundy"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MeursaultRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BourgogneRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SancerreRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LoireRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlancGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GermanWine">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GermanyRegion"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlanc">
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc"/>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlancGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Tours">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlancGrape"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire"/>
+      <owl:Restriction>
+        <owl:hasValue>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ToursRegion">
+            <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LoireRegion"/>
+          </vin:Region>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:intersectionOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#producesWine">
+    <owl:inverseOf>
+      <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeIntoWine">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineGrape"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#madeFromFruit"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#yearValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#VintageYear"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:SymmetricProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#adjacentRegion">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineFlavor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#VintageYear"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Vintage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineBody"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar">
+    <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineSugar"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <vin:Meritage rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KathrynKennedyLateral">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KathrynKennedy"/>
+    </vin:hasMaker>
+  </vin:Meritage>
+  <vin:StEmilion rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauChevalBlancStEmilion">
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauChevalBlanc"/>
+    </vin:hasMaker>
+  </vin:StEmilion>
+  <vin:PinotNoir rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LaneTannerPinotNoir">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LaneTanner"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaBarbaraRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:PinotNoir>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+      <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+      <vin:WineBody rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <vin:CabernetSauvignon rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PageMillWineryCabernetSauvignon">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PageMillWinery"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:CabernetSauvignon>
+  <vin:CabernetSauvignon rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaCruzMountainVineyardCabernetSauvignon">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaCruzMountainVineyard"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaCruzMountainsRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:CabernetSauvignon>
+  <vin:Riesling rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CorbansDryWhiteRiesling">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Corbans"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion"/>
+    </vin:locatedIn>
+  </vin:Riesling>
+  <vin:Chianti rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChiantiClassico">
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#McGuinnesso"/>
+    </vin:hasMaker>
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+  </vin:Chianti>
+  <vin:Zinfandel rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaZinfandel">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Marietta"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:Zinfandel>
+  <vin:Chardonnay rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BancroftChardonnay">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bancroft"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion"/>
+  </vin:Chardonnay>
+  <vin:RedTableWine rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaOldVinesRed">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Marietta"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion"/>
+  </vin:RedTableWine>
+  <vin:Zinfandel rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyonZinfandel">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyon"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ArroyoGrandeRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:Zinfandel>
+  <vin:SauvignonBlanc rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StonleighSauvignonBlanc">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Stonleigh"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion"/>
+  </vin:SauvignonBlanc>
+  <vin:Pauillac rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauLafiteRothschildPauillac">
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauLafiteRothschild"/>
+    </vin:hasMaker>
+  </vin:Pauillac>
+  <vin:Merlot rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LongridgeMerlot">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Longridge"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion"/>
+  </vin:Merlot>
+  <vin:CheninBlanc rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FoxenCheninBlanc">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Foxen"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaBarbaraRegion"/>
+  </vin:CheninBlanc>
+  <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Handley"/>
+  <vin:SauvignonBlanc rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CorbansPrivateBinSauvignonBlanc">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Corbans"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion"/>
+  </vin:SauvignonBlanc>
+  <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beringer"/>
+  <vin:PetiteSyrah rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaPetiteSyrah">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Marietta"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion"/>
+  </vin:PetiteSyrah>
+  <vin:WhiteWine rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StGenevieveTexasWhite">
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StGenevieve"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CentralTexasRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TexasRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:WhiteWine>
+  <vin:Zinfandel rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyonZinfandel1998">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyon"/>
+    <vin:hasVintageYear>
+      <vin:VintageYear rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Year1998">
+        <vin:yearValue rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger"
+        >1998</vin:yearValue>
+      </vin:VintageYear>
+    </vin:hasVintageYear>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ArroyoGrandeRegion"/>
+  </vin:Zinfandel>
+  <vin:SweetRiesling rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossVolradTrochenbierenausleseRiesling">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossVolrad"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GermanyRegion"/>
+  </vin:SweetRiesling>
+  <vin:PinotNoir rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyardEstatePinotNoir">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyard"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EdnaValleyRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:PinotNoir>
+  <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MendocinoRegion">
+    <vin:adjacentRegion rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+  </vin:Region>
+  <vin:Chardonnay rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountadamChardonnay">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Mountadam"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SouthAustraliaRegion">
+        <vin:locatedIn>
+          <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AustralianRegion"/>
+        </vin:locatedIn>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:Chardonnay>
+  <vin:Muscadet rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SevreEtMaineMuscadet">
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SevreEtMaine"/>
+    </vin:hasMaker>
+  </vin:Muscadet>
+  <vin:Merlot rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GaryFarrellMerlot">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GaryFarrell"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion"/>
+  </vin:Merlot>
+  <vin:SweetRiesling rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossRothermelTrochenbierenausleseRiesling">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossRothermel"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GermanyRegion"/>
+  </vin:SweetRiesling>
+  <vin:CotesDOr rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeVougeotCotesDOr">
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeVougeot"/>
+    </vin:hasMaker>
+  </vin:CotesDOr>
+  <vin:PinotNoir rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountadamPinotNoir">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Mountadam"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SouthAustraliaRegion"/>
+  </vin:PinotNoir>
+  <vin:CheninBlanc rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#VentanaCheninBlanc">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Ventana"/>
+    </vin:hasMaker>
+    <vin:locatedIn>
+      <vin:Region rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CentralCoastRegion">
+        <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion"/>
+      </vin:Region>
+    </vin:locatedIn>
+  </vin:CheninBlanc>
+  <vin:Chardonnay rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PeterMccoyChardonnay">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PeterMccoy"/>
+    </vin:hasMaker>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion"/>
+  </vin:Chardonnay>
+  <vin:Sauternes rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDYchemSauterne">
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDYchem"/>
+    </vin:hasMaker>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:madeFromGrape rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonGrape"/>
+    <vin:madeFromGrape rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlancGrape"/>
+  </vin:Sauternes>
+  <vin:WhiteBurgundy rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CortonMontrachetWhiteBurgundy">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CortonMontrachet"/>
+    </vin:hasMaker>
+  </vin:WhiteBurgundy>
+  <vin:CabernetSauvignon rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaCabernetSauvignon">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Marietta"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion"/>
+  </vin:CabernetSauvignon>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bancroft"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauChevalBlanc"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDYchem"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDeMeursault"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauLafiteRothschild"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMargauxWinery"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMorgon"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeLaPoussie"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeVougeot"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CongressSprings"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Corbans"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CortonMontrachet"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Cotturi"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DAnjou"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Elyse"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Forman"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Foxen"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GaryFarrell"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KalinCellars"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KathrynKennedy"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LaneTanner"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Longridge"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Marietta"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#McGuinnesso"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyard"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Mountadam"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PageMillWinery"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PeterMccoy"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PulignyMontrachet"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaCruzMountainVineyard"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyon"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossRothermel"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossVolrad"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SeanThackrey"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Selaks"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SevreEtMaine"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StGenevieve"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Stonleigh"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Taylor"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Ventana"/>
+      <vin:Winery rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhitehallLane"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <vin:IceWine rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SelaksIceWine">
+    <vin:hasColor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Selaks"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion"/>
+  </vin:IceWine>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+      <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+      <vin:WineColor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <vin:Zinfandel rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ElyseZinfandel">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Elyse"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion"/>
+  </vin:Zinfandel>
+  <vin:Zinfandel rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotturiZinfandel">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Cotturi"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion"/>
+  </vin:Zinfandel>
+  <vin:Meursault rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDeMeursaultMeursault">
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDeMeursault"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+  </vin:Meursault>
+  <vin:PetiteSyrah rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SeanThackreySiriusPetiteSyrah">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SeanThackrey"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion"/>
+  </vin:PetiteSyrah>
+  <vin:Semillon rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KalinCellarsSemillon">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KalinCellars"/>
+  </vin:Semillon>
+  <vin:Sancerre rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeLaPoussieSancerre">
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeLaPoussie"/>
+  </vin:Sancerre>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+      <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+      <vin:WineSugar rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <vin:SauvignonBlanc rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SelaksSauvignonBlanc">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Selaks"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion"/>
+  </vin:SauvignonBlanc>
+  <vin:CabernetFranc rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhitehallLaneCabernetFranc">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhitehallLane"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion"/>
+  </vin:CabernetFranc>
+  <vin:WhiteBurgundy rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PulignyMontrachetWhiteBurgundy">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PulignyMontrachet"/>
+  </vin:WhiteBurgundy>
+  <vin:DessertWine rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhitehallLanePrimavera">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion"/>
+  </vin:DessertWine>
+  <vin:Anjou rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RoseDAnjou">
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DAnjou"/>
+  </vin:Anjou>
+  <vin:Beaujolais rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMorgonBeaujolais">
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMorgon"/>
+  </vin:Beaujolais>
+  <vin:Chardonnay rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FormanChardonnay">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Forman"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion"/>
+  </vin:Chardonnay>
+  <vin:DryRiesling rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountadamRiesling">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Mountadam"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SouthAustraliaRegion"/>
+  </vin:DryRiesling>
+  <vin:Semillon rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CongressSpringsSemillon">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CongressSprings"/>
+  </vin:Semillon>
+  <vin:Margaux rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMargaux">
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMargauxWinery"/>
+  </vin:Margaux>
+  <vin:SauvignonBlanc rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CorbansSauvignonBlanc">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Corbans"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion"/>
+  </vin:SauvignonBlanc>
+  <vin:Chardonnay rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyardEdnaValleyChardonnay">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyard"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EdnaValleyRegion"/>
+  </vin:Chardonnay>
+  <vin:Port rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TaylorPort">
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Taylor"/>
+  </vin:Port>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+      <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+      <vin:WineFlavor rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <vin:CabernetSauvignon rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FormanCabernetSauvignon">
+    <vin:hasBody rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    <vin:hasFlavor rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    <vin:hasSugar rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    <vin:hasMaker rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Forman"/>
+    <vin:locatedIn rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion"/>
+  </vin:CabernetSauvignon>
+</rdf:RDF>

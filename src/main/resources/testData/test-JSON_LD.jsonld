@@ -1,0 +1,2472 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b0",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:PetiteSyrahGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b10",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b100",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:SauterneRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b101",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b102",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b102",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:CheninBlancGrape", "vin:PinotBlancGrape", "vin:SauvignonBlancGrape" ]
+    }
+  }, {
+    "@id" : "_:b103",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CabernetSauvignonGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b105",
+    "@type" : "owl:Restriction",
+    "onProperty" : "vin:locatedIn",
+    "someValuesFrom" : "vin:Region"
+  }, {
+    "@id" : "_:b106",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b107",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "vin:Winery",
+    "onProperty" : "vin:hasMaker"
+  }, {
+    "@id" : "_:b108",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b109",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b11",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b110",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "vin:hasMaker"
+  }, {
+    "@id" : "_:b111",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b117",
+    "@type" : "owl:AllDifferent",
+    "distinctMembers" : {
+      "@list" : [ "vin:Red", "vin:White", "vin:Rose" ]
+    }
+  }, {
+    "@id" : "_:b122",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Moderate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b125",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:ItalianRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b126",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b127",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b127",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Strong", "vin:Moderate" ]
+    }
+  }, {
+    "@id" : "_:b130",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b347",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b131",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b132",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b132",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Medium", "vin:Full" ]
+    }
+  }, {
+    "@id" : "_:b135",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:ToursRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b139",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b14",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:SauvignonBlancGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b140",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CabernetSauvignonGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b141",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Strong",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b142",
+    "@type" : "owl:AllDifferent",
+    "distinctMembers" : {
+      "@list" : [ "vin:Delicate", "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "_:b145",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b308",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b147",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Sweet",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b148",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b149",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b150",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b15",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b150",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Dry", "vin:OffDry" ]
+    }
+  }, {
+    "@id" : "_:b155",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b156",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Dry", "vin:OffDry" ]
+    }
+  }, {
+    "@id" : "_:b159",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:LoireRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b160",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b163",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:ChardonnayGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b164",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b165",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b166",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b59",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b171",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Medium", "vin:Full" ]
+    }
+  }, {
+    "@id" : "_:b174",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b175",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "_:b177",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b179",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:AnjouRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b18",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b180",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Sweet",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b181",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Strong",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b182",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Full",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b183",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:PortugalRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b187",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:BordeauxRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b192",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:OffDry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b197",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b199",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b203",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:FrenchRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b205",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Medium", "vin:Full" ]
+    }
+  }, {
+    "@id" : "_:b21",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:AlsaceRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b215",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b265",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b216",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b217",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Moderate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b218",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:SangioveseGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b219",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b220",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:ChiantiRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b223",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:ChardonnayGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b231",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Sweet",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b232",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CaliforniaRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b234",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:BourgogneRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b235",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "_:b243",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "_:b245",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Rose",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b247",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b248",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b175",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b249",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Sweet",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b250",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:PinotBlancGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b251",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b252",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Delicate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b253",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Light",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b259",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b262",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CheninBlancGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b263",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:RieslingGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b265",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Light", "vin:Medium" ]
+    }
+  }, {
+    "@id" : "_:b267",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b269",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:GamayGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b27",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:MuscadetRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b272",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Medium", "vin:Full" ]
+    }
+  }, {
+    "@id" : "_:b281",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:MargauxRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b282",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:USRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b283",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b70",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b285",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:MedocRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b286",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CotesDOrRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b288",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b29",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b156",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b291",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b293",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Light",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b294",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b299",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b30",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b6",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b308",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Dry", "vin:OffDry" ]
+    }
+  }, {
+    "@id" : "_:b309",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CheninBlancGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b31",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Moderate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b311",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b314",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Full",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b315",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Moderate", "vin:Delicate" ]
+    }
+  }, {
+    "@id" : "_:b316",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b319",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:TexasRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b32",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b320",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Full", "vin:Medium" ]
+    }
+  }, {
+    "@id" : "_:b325",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b327",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b329",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:PinotNoirGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b334",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:MerlotGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b335",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Delicate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b338",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Rose",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b339",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b340",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "vin:hasVintageYear"
+  }, {
+    "@id" : "_:b343",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b235",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b344",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:StEmilionRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b347",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:CabernetSauvignonGrape", "vin:CabernetFrancGrape", "vin:MalbecGrape", "vin:PetiteVerdotGrape", "vin:MerlotGrape" ]
+    }
+  }, {
+    "@id" : "_:b349",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:GamayGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b35",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:ZinfandelGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b352",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:SemillonGrape", "vin:SauvignonBlancGrape" ]
+    }
+  }, {
+    "@id" : "_:b354",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b320",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b358",
+    "@type" : "owl:AllDifferent",
+    "distinctMembers" : {
+      "@list" : [ "vin:Light", "vin:Medium", "vin:Full" ]
+    }
+  }, {
+    "@id" : "_:b359",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:MerlotGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b361",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b364",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Delicate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b365",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "2",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b367",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b371",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b372",
+    "@type" : "owl:AllDifferent",
+    "distinctMembers" : {
+      "@list" : [ "vin:Bancroft", "vin:ChateauChevalBlanc", "vin:ChateauDYchem", "vin:ChateauDeMeursault", "vin:ChateauLafiteRothschild", "vin:ChateauMargauxWinery", "vin:ChateauMorgon", "vin:ClosDeLaPoussie", "vin:ClosDeVougeot", "vin:CongressSprings", "vin:Corbans", "vin:CortonMontrachet", "vin:Cotturi", "vin:DAnjou", "vin:Elyse", "vin:Forman", "vin:Foxen", "vin:GaryFarrell", "vin:KalinCellars", "vin:KathrynKennedy", "vin:LaneTanner", "vin:Longridge", "vin:Marietta", "vin:McGuinnesso", "vin:MountEdenVineyard", "vin:Mountadam", "vin:PageMillWinery", "vin:PeterMccoy", "vin:PulignyMontrachet", "vin:SantaCruzMountainVineyard", "vin:SaucelitoCanyon", "vin:SchlossRothermel", "vin:SchlossVolrad", "vin:SeanThackrey", "vin:Selaks", "vin:SevreEtMaine", "vin:StGenevieve", "vin:Stonleigh", "vin:Taylor", "vin:Ventana", "vin:WhitehallLane" ]
+    }
+  }, {
+    "@id" : "_:b374",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b38",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CabernetFrancGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b380",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b383",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "_:b389",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b390",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b391",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b391",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Light", "vin:Medium" ]
+    }
+  }, {
+    "@id" : "_:b394",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Medium",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b397",
+    "@type" : "owl:AllDifferent",
+    "distinctMembers" : {
+      "@list" : [ "vin:Sweet", "vin:OffDry", "vin:Dry" ]
+    }
+  }, {
+    "@id" : "_:b40",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b205",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b400",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:GermanyRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b402",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b405",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b93",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b409",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b243",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b41",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b411",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:SancerreRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b413",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Delicate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b417",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Full",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b418",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b171",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b420",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:SemillonGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b424",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:OffDry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b425",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b427",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Full",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b43",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b432",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b272",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b433",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b435",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b383",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b438",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b444",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:PinotBlancGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b446",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b447",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b448",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:MeursaultRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b449",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b352",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b45",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b450",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b452",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Light",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b453",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b46",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Medium",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b47",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Moderate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b48",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b49",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:PinotNoirGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:CabernetSauvignonGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b51",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:PauillacRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b54",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:White",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b56",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:BeaujolaisRegion",
+    "onProperty" : "vin:locatedIn"
+  }, {
+    "@id" : "_:b59",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:CabernetSauvignonGrape", "vin:MerlotGrape" ]
+    }
+  }, {
+    "@id" : "_:b6",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Full", "vin:Medium" ]
+    }
+  }, {
+    "@id" : "_:b61",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Strong",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b63",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b99",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b64",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b315",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b65",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b66",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b68",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b69",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b69",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "_:b70",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:OffDry", "vin:Sweet" ]
+    }
+  }, {
+    "@id" : "_:b73",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:SauvignonBlancGrape",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b74",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b77",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b78",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b78",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "_:b80",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "vin:madeFromGrape"
+  }, {
+    "@id" : "_:b81",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b82",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Medium",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b87",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Full",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b88",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Delicate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b90",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b92",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Red",
+    "onProperty" : "vin:hasColor"
+  }, {
+    "@id" : "_:b93",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:SemillonGrape", "vin:SauvignonBlancGrape" ]
+    }
+  }, {
+    "@id" : "_:b95",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Delicate",
+    "onProperty" : "vin:hasFlavor"
+  }, {
+    "@id" : "_:b96",
+    "@type" : "owl:Restriction",
+    "hasValue" : "vin:Dry",
+    "onProperty" : "vin:hasSugar"
+  }, {
+    "@id" : "_:b97",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b98",
+    "onProperty" : "vin:hasBody"
+  }, {
+    "@id" : "_:b98",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Full", "vin:Medium" ]
+    }
+  }, {
+    "@id" : "_:b99",
+    "@type" : "owl:Class",
+    "oneOf" : {
+      "@list" : [ "vin:Light", "vin:Medium" ]
+    }
+  }, {
+    "@id" : "http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine",
+    "@type" : "owl:Ontology"
+  }, {
+    "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine",
+    "@type" : "owl:Ontology",
+    "comment" : [ "Derived from the DAML Wine ontology at \n      http://ontolingua.stanford.edu/doc/chimaera/ontologies/wines.daml\n      Substantially changed, in particular the Region based relations.\n    ", "An example OWL ontology" ],
+    "label" : "Wine Ontology",
+    "imports" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/food",
+    "priorVersion" : "http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine"
+  }, {
+    "@id" : "vin:AlsaceRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:FrenchRegion"
+  }, {
+    "@id" : "vin:AlsatianWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b21" ]
+    }
+  }, {
+    "@id" : "vin:AmericanWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b282" ]
+    }
+  }, {
+    "@id" : "vin:Anjou",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b424", "_:b364", "_:b293", "_:b338" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Loire", "_:b179" ]
+    }
+  }, {
+    "@id" : "vin:AnjouRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:LoireRegion"
+  }, {
+    "@id" : "vin:ArroyoGrandeRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:AustralianRegion",
+    "@type" : "Region"
+  }, {
+    "@id" : "vin:Bancroft",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:BancroftChardonnay",
+    "@type" : "Chardonnay",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Bancroft",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:Beaujolais",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b450", "_:b349", "_:b88", "_:b294", "_:b452", "_:b327" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b56" ]
+    }
+  }, {
+    "@id" : "vin:BeaujolaisRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:FrenchRegion"
+  }, {
+    "@id" : "vin:Beringer",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:Bordeaux",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b187" ]
+    }
+  }, {
+    "@id" : "vin:BordeauxRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:FrenchRegion"
+  }, {
+    "@id" : "vin:BourgogneRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:FrenchRegion"
+  }, {
+    "@id" : "vin:Burgundy",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b291",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b234" ]
+    }
+  }, {
+    "@id" : "vin:CabernetFranc",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b45", "_:b46", "_:b47", "_:b48" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b38", "_:b174" ]
+    }
+  }, {
+    "@id" : "vin:CabernetFrancGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:CabernetSauvignon",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b418", "_:b68", "_:b438", "_:b325" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b103", "_:b3" ]
+    }
+  }, {
+    "@id" : "vin:CabernetSauvignonGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:CaliforniaRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:USRegion"
+  }, {
+    "@id" : "vin:CaliforniaWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b232" ]
+    }
+  }, {
+    "@id" : "vin:CentralCoastRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:CentralTexasRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:TexasRegion"
+  }, {
+    "@id" : "vin:Chardonnay",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b126", "_:b354", "_:b177" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b163", "_:b446" ]
+    }
+  }, {
+    "@id" : "vin:ChardonnayGrape",
+    "@type" : "WineGrape"
+  }, {
+    "@id" : "vin:ChateauChevalBlanc",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ChateauChevalBlancStEmilion",
+    "@type" : "StEmilion",
+    "hasMaker" : "vin:ChateauChevalBlanc"
+  }, {
+    "@id" : "vin:ChateauDYchem",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ChateauDYchemSauterne",
+    "@type" : "Sauternes",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:ChateauDYchem",
+    "madeFromGrape" : [ "vin:SemillonGrape", "vin:SauvignonBlancGrape" ]
+  }, {
+    "@id" : "vin:ChateauDeMeursault",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ChateauDeMeursaultMeursault",
+    "@type" : "Meursault",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:ChateauDeMeursault"
+  }, {
+    "@id" : "vin:ChateauLafiteRothschild",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ChateauLafiteRothschildPauillac",
+    "@type" : "Pauillac",
+    "hasMaker" : "vin:ChateauLafiteRothschild"
+  }, {
+    "@id" : "vin:ChateauMargaux",
+    "@type" : "Margaux",
+    "hasMaker" : "vin:ChateauMargauxWinery"
+  }, {
+    "@id" : "vin:ChateauMargauxWinery",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ChateauMorgon",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ChateauMorgonBeaujolais",
+    "@type" : "Beaujolais",
+    "hasMaker" : "vin:ChateauMorgon"
+  }, {
+    "@id" : "vin:CheninBlanc",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b29", "_:b30", "_:b31", "_:b32" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b262", "_:b288" ]
+    }
+  }, {
+    "@id" : "vin:CheninBlancGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:Chianti",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b215", "_:b216", "_:b217", "_:b218", "_:b219", "_:b220", "vin:ItalianWine" ]
+  }, {
+    "@id" : "vin:ChiantiClassico",
+    "@type" : "Chianti",
+    "hasBody" : "vin:Medium",
+    "hasMaker" : "vin:McGuinnesso"
+  }, {
+    "@id" : "vin:ChiantiRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:ItalianRegion"
+  }, {
+    "@id" : "vin:ClosDeLaPoussie",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ClosDeLaPoussieSancerre",
+    "@type" : "Sancerre",
+    "hasMaker" : "vin:ClosDeLaPoussie"
+  }, {
+    "@id" : "vin:ClosDeVougeot",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ClosDeVougeotCotesDOr",
+    "@type" : "CotesDOr",
+    "hasMaker" : "vin:ClosDeVougeot"
+  }, {
+    "@id" : "vin:CongressSprings",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:CongressSpringsSemillon",
+    "@type" : "Semillon",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:CongressSprings",
+    "hasSugar" : "vin:Dry"
+  }, {
+    "@id" : "vin:Corbans",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:CorbansDryWhiteRiesling",
+    "@type" : "Riesling",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Corbans",
+    "hasSugar" : "vin:OffDry",
+    "locatedIn" : "vin:NewZealandRegion"
+  }, {
+    "@id" : "vin:CorbansPrivateBinSauvignonBlanc",
+    "@type" : "SauvignonBlanc",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:Corbans",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NewZealandRegion"
+  }, {
+    "@id" : "vin:CorbansSauvignonBlanc",
+    "@type" : "SauvignonBlanc",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:Corbans",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NewZealandRegion"
+  }, {
+    "@id" : "vin:CortonMontrachet",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:CortonMontrachetWhiteBurgundy",
+    "@type" : "WhiteBurgundy",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:CortonMontrachet",
+    "hasSugar" : "vin:Dry"
+  }, {
+    "@id" : "vin:CotesDOr",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b122",
+    "intersectionOf" : {
+      "@list" : [ "vin:RedBurgundy", "_:b286" ]
+    }
+  }, {
+    "@id" : "vin:CotesDOrRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:BourgogneRegion"
+  }, {
+    "@id" : "vin:Cotturi",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:CotturiZinfandel",
+    "@type" : "Zinfandel",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:Cotturi",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SonomaRegion"
+  }, {
+    "@id" : "vin:DAnjou",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:Delicate",
+    "@type" : [ "WineFlavor", "owl:Thing" ]
+  }, {
+    "@id" : "vin:DessertWine",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b283", "vin:Wine" ]
+  }, {
+    "@id" : "vin:Dry",
+    "@type" : [ "WineSugar", "owl:Thing" ]
+  }, {
+    "@id" : "vin:DryRedWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:DryWine", "vin:RedWine" ]
+    }
+  }, {
+    "@id" : "vin:DryRiesling",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b390", "_:b413", "_:b389" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Riesling", "_:b165" ]
+    }
+  }, {
+    "@id" : "vin:DryWhiteWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:DryWine", "vin:WhiteWine" ]
+    }
+  }, {
+    "@id" : "vin:DryWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b96" ]
+    }
+  }, {
+    "@id" : "vin:EarlyHarvest",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b149", "vin:Wine" ]
+  }, {
+    "@id" : "vin:EdnaValleyRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:Elyse",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:ElyseZinfandel",
+    "@type" : "Zinfandel",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Elyse",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:Forman",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:FormanCabernetSauvignon",
+    "@type" : "CabernetSauvignon",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:Forman",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:FormanChardonnay",
+    "@type" : "Chardonnay",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Forman",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:Foxen",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:FoxenCheninBlanc",
+    "@type" : "CheninBlanc",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Foxen",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SantaBarbaraRegion"
+  }, {
+    "@id" : "vin:FrenchRegion",
+    "@type" : "Region"
+  }, {
+    "@id" : "vin:FrenchWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b203" ]
+    }
+  }, {
+    "@id" : "vin:Full",
+    "@type" : [ "WineBody", "owl:Thing" ]
+  }, {
+    "@id" : "vin:FullBodiedWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b314" ]
+    }
+  }, {
+    "@id" : "vin:Gamay",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b269", "_:b339" ]
+    }
+  }, {
+    "@id" : "vin:GamayGrape",
+    "@type" : "WineGrape"
+  }, {
+    "@id" : "vin:GaryFarrell",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:GaryFarrellMerlot",
+    "@type" : "Merlot",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:GaryFarrell",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SonomaRegion"
+  }, {
+    "@id" : "vin:GermanWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b400" ]
+    }
+  }, {
+    "@id" : "vin:GermanyRegion",
+    "@type" : "Region"
+  }, {
+    "@id" : "vin:Handley",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:IceWine",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b77", "_:b131" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:LateHarvest", "vin:DessertWine", "_:b247" ]
+    }
+  }, {
+    "@id" : "vin:ItalianRegion",
+    "@type" : "Region"
+  }, {
+    "@id" : "vin:ItalianWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b125" ]
+    }
+  }, {
+    "@id" : "vin:KalinCellars",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:KalinCellarsSemillon",
+    "@type" : "Semillon",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:KalinCellars",
+    "hasSugar" : "vin:Dry"
+  }, {
+    "@id" : "vin:KathrynKennedy",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:KathrynKennedyLateral",
+    "@type" : "Meritage",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Delicate",
+    "hasMaker" : "vin:KathrynKennedy",
+    "hasSugar" : "vin:Dry"
+  }, {
+    "@id" : "vin:LaneTanner",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:LaneTannerPinotNoir",
+    "@type" : "PinotNoir",
+    "hasBody" : "vin:Light",
+    "hasFlavor" : "vin:Delicate",
+    "hasMaker" : "vin:LaneTanner",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SantaBarbaraRegion"
+  }, {
+    "@id" : "vin:LateHarvest",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b248", "_:b249", "vin:Wine" ],
+    "disjointWith" : "vin:EarlyHarvest"
+  }, {
+    "@id" : "vin:Light",
+    "@type" : [ "WineBody", "owl:Thing" ]
+  }, {
+    "@id" : "vin:Loire",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b159" ]
+    }
+  }, {
+    "@id" : "vin:LoireRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:FrenchRegion"
+  }, {
+    "@id" : "vin:Longridge",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:LongridgeMerlot",
+    "@type" : "Merlot",
+    "hasBody" : "vin:Light",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Longridge",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NewZealandRegion"
+  }, {
+    "@id" : "vin:MalbecGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:Margaux",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b80", "_:b334", "_:b95" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Medoc", "_:b281" ]
+    }
+  }, {
+    "@id" : "vin:MargauxRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:MedocRegion"
+  }, {
+    "@id" : "vin:Marietta",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:MariettaCabernetSauvignon",
+    "@type" : "CabernetSauvignon",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Marietta",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SonomaRegion"
+  }, {
+    "@id" : "vin:MariettaOldVinesRed",
+    "@type" : "RedTableWine",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Marietta",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SonomaRegion"
+  }, {
+    "@id" : "vin:MariettaPetiteSyrah",
+    "@type" : "PetiteSyrah",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Marietta",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SonomaRegion"
+  }, {
+    "@id" : "vin:MariettaZinfandel",
+    "@type" : "Zinfandel",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Marietta",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SonomaRegion"
+  }, {
+    "@id" : "vin:McGuinnesso",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:Medium",
+    "@type" : [ "WineBody", "owl:Thing" ]
+  }, {
+    "@id" : "vin:Medoc",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b164", "_:b447" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Bordeaux", "_:b285" ]
+    }
+  }, {
+    "@id" : "vin:MedocRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:BordeauxRegion"
+  }, {
+    "@id" : "vin:MendocinoRegion",
+    "@type" : "Region",
+    "adjacentRegion" : "vin:SonomaRegion",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:Meritage",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b10",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b130", "_:b365" ]
+    }
+  }, {
+    "@id" : "vin:Merlot",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b63", "_:b64", "_:b65", "_:b66" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b359", "_:b18" ]
+    }
+  }, {
+    "@id" : "vin:MerlotGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:Meursault",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b427",
+    "intersectionOf" : {
+      "@list" : [ "vin:WhiteBurgundy", "_:b448" ]
+    }
+  }, {
+    "@id" : "vin:MeursaultRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:BourgogneRegion"
+  }, {
+    "@id" : "vin:Moderate",
+    "@type" : [ "WineFlavor", "owl:Thing" ]
+  }, {
+    "@id" : "vin:MountEdenVineyard",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:MountEdenVineyardEdnaValleyChardonnay",
+    "@type" : "Chardonnay",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:MountEdenVineyard",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:EdnaValleyRegion"
+  }, {
+    "@id" : "vin:MountEdenVineyardEstatePinotNoir",
+    "@type" : "PinotNoir",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:MountEdenVineyard",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:EdnaValleyRegion"
+  }, {
+    "@id" : "vin:Mountadam",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:MountadamChardonnay",
+    "@type" : "Chardonnay",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:Mountadam",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SouthAustraliaRegion"
+  }, {
+    "@id" : "vin:MountadamPinotNoir",
+    "@type" : "PinotNoir",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Mountadam",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SouthAustraliaRegion"
+  }, {
+    "@id" : "vin:MountadamRiesling",
+    "@type" : "DryRiesling",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Delicate",
+    "hasMaker" : "vin:Mountadam",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SouthAustraliaRegion"
+  }, {
+    "@id" : "vin:Muscadet",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b74", "_:b250", "_:b251", "_:b252", "_:b253" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Loire", "_:b27" ]
+    }
+  }, {
+    "@id" : "vin:MuscadetRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:LoireRegion"
+  }, {
+    "@id" : "vin:NapaRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:NewZealandRegion",
+    "@type" : "Region"
+  }, {
+    "@id" : "vin:OffDry",
+    "@type" : [ "WineSugar", "owl:Thing" ],
+    "differentFrom" : [ "vin:Sweet", "vin:Dry" ]
+  }, {
+    "@id" : "vin:PageMillWinery",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:PageMillWineryCabernetSauvignon",
+    "@type" : "CabernetSauvignon",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:PageMillWinery",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:Pauillac",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b139", "_:b140", "_:b141", "_:b87" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Medoc", "_:b51" ]
+    }
+  }, {
+    "@id" : "vin:PauillacRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:MedocRegion"
+  }, {
+    "@id" : "vin:PeterMccoy",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:PeterMccoyChardonnay",
+    "@type" : "Chardonnay",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:PeterMccoy",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SonomaRegion"
+  }, {
+    "@id" : "vin:PetiteSyrah",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b432", "_:b409", "_:b197", "_:b433" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b1", "_:b425" ]
+    }
+  }, {
+    "@id" : "vin:PetiteSyrahGrape",
+    "@type" : "WineGrape"
+  }, {
+    "@id" : "vin:PetiteVerdotGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:PinotBlanc",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b54",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b444", "_:b311" ]
+    }
+  }, {
+    "@id" : "vin:PinotBlancGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:PinotNoir",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b81",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b49", "_:b199" ]
+    }
+  }, {
+    "@id" : "vin:PinotNoirGrape",
+    "@type" : "WineGrape"
+  }, {
+    "@id" : "vin:Port",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b180", "_:b181", "_:b182", "_:b183", "vin:RedWine" ]
+  }, {
+    "@id" : "vin:PortugalRegion",
+    "@type" : "Region"
+  }, {
+    "@id" : "vin:PulignyMontrachet",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:PulignyMontrachetWhiteBurgundy",
+    "@type" : "WhiteBurgundy",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:PulignyMontrachet",
+    "hasSugar" : "vin:Dry"
+  }, {
+    "@id" : "vin:Red",
+    "@type" : [ "WineColor", "owl:Thing" ]
+  }, {
+    "@id" : "vin:RedBordeaux",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b166",
+    "intersectionOf" : {
+      "@list" : [ "vin:Bordeaux", "vin:RedWine" ]
+    }
+  }, {
+    "@id" : "vin:RedBurgundy",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b299", "_:b329" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Burgundy", "vin:RedWine" ]
+    }
+  }, {
+    "@id" : "vin:RedTableWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:TableWine", "_:b15" ]
+    }
+  }, {
+    "@id" : "vin:RedWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b11" ]
+    }
+  }, {
+    "@id" : "vin:Region",
+    "@type" : "owl:Class"
+  }, {
+    "@id" : "vin:Riesling",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b155",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b263", "_:b402" ]
+    }
+  }, {
+    "@id" : "vin:RieslingGrape",
+    "@type" : "WineGrape"
+  }, {
+    "@id" : "vin:Rose",
+    "@type" : [ "WineColor", "owl:Thing" ]
+  }, {
+    "@id" : "vin:RoseDAnjou",
+    "@type" : "Anjou",
+    "hasMaker" : "vin:DAnjou"
+  }, {
+    "@id" : "vin:RoseWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b245" ]
+    }
+  }, {
+    "@id" : "vin:Sancerre",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b148", "_:b14", "_:b335", "_:b192", "_:b394" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Loire", "_:b411" ]
+    }
+  }, {
+    "@id" : "vin:SancerreRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:LoireRegion"
+  }, {
+    "@id" : "vin:SangioveseGrape",
+    "@type" : "WineGrape"
+  }, {
+    "@id" : "vin:SantaBarbaraRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:SantaCruzMountainVineyard",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:SantaCruzMountainVineyardCabernetSauvignon",
+    "@type" : "CabernetSauvignon",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:SantaCruzMountainVineyard",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:SantaCruzMountainsRegion"
+  }, {
+    "@id" : "vin:SantaCruzMountainsRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:SaucelitoCanyon",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:SaucelitoCanyonZinfandel",
+    "@type" : "Zinfandel",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:SaucelitoCanyon",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:ArroyoGrandeRegion"
+  }, {
+    "@id" : "vin:SaucelitoCanyonZinfandel1998",
+    "@type" : "Zinfandel",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:SaucelitoCanyon",
+    "hasSugar" : "vin:Dry",
+    "hasVintageYear" : "vin:Year1998",
+    "locatedIn" : "vin:ArroyoGrandeRegion"
+  }, {
+    "@id" : "vin:SauterneRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:BordeauxRegion"
+  }, {
+    "@id" : "vin:Sauternes",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b267", "_:b82", "_:b100", "vin:Bordeaux", "vin:LateHarvest" ]
+  }, {
+    "@id" : "vin:SauvignonBlanc",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:SemillonOrSauvignonBlanc", "_:b73", "_:b43" ]
+    }
+  }, {
+    "@id" : "vin:SauvignonBlancGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:SchlossRothermel",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:SchlossRothermelTrochenbierenausleseRiesling",
+    "@type" : "SweetRiesling",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:SchlossRothermel",
+    "hasSugar" : "vin:Sweet",
+    "locatedIn" : "vin:GermanyRegion"
+  }, {
+    "@id" : "vin:SchlossVolrad",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:SchlossVolradTrochenbierenausleseRiesling",
+    "@type" : "SweetRiesling",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:SchlossVolrad",
+    "hasSugar" : "vin:Sweet",
+    "locatedIn" : "vin:GermanyRegion"
+  }, {
+    "@id" : "vin:SeanThackrey",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:SeanThackreySiriusPetiteSyrah",
+    "@type" : "PetiteSyrah",
+    "hasBody" : "vin:Full",
+    "hasFlavor" : "vin:Strong",
+    "hasMaker" : "vin:SeanThackrey",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:Selaks",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:SelaksIceWine",
+    "@type" : "IceWine",
+    "hasBody" : "vin:Medium",
+    "hasColor" : "vin:White",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Selaks",
+    "locatedIn" : "vin:NewZealandRegion"
+  }, {
+    "@id" : "vin:SelaksSauvignonBlanc",
+    "@type" : "SauvignonBlanc",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Selaks",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NewZealandRegion"
+  }, {
+    "@id" : "vin:Semillon",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:SemillonOrSauvignonBlanc", "_:b420", "_:b374" ]
+    }
+  }, {
+    "@id" : "vin:SemillonGrape",
+    "@type" : [ "WineGrape", "owl:Thing" ]
+  }, {
+    "@id" : "vin:SemillonOrSauvignonBlanc",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b40", "_:b41" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b405" ]
+    }
+  }, {
+    "@id" : "vin:SevreEtMaine",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:SevreEtMaineMuscadet",
+    "@type" : "Muscadet",
+    "hasMaker" : "vin:SevreEtMaine"
+  }, {
+    "@id" : "vin:SonomaRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:CaliforniaRegion"
+  }, {
+    "@id" : "vin:SouthAustraliaRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:AustralianRegion"
+  }, {
+    "@id" : "vin:StEmilion",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b0", "_:b5", "_:b61", "_:b316" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Bordeaux", "_:b344" ]
+    }
+  }, {
+    "@id" : "vin:StEmilionRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:BordeauxRegion"
+  }, {
+    "@id" : "vin:StGenevieve",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:StGenevieveTexasWhite",
+    "@type" : "WhiteWine",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:StGenevieve",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:CentralTexasRegion"
+  }, {
+    "@id" : "vin:Stonleigh",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:StonleighSauvignonBlanc",
+    "@type" : "SauvignonBlanc",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Delicate",
+    "hasMaker" : "vin:Stonleigh",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NewZealandRegion"
+  }, {
+    "@id" : "vin:Strong",
+    "@type" : [ "WineFlavor", "owl:Thing" ]
+  }, {
+    "@id" : "vin:Sweet",
+    "@type" : [ "WineSugar", "owl:Thing" ],
+    "differentFrom" : "vin:Dry"
+  }, {
+    "@id" : "vin:SweetRiesling",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b343", "_:b417", "vin:DessertWine" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Riesling", "_:b147" ]
+    }
+  }, {
+    "@id" : "vin:SweetWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b231" ]
+    }
+  }, {
+    "@id" : "vin:TableWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b371" ]
+    }
+  }, {
+    "@id" : "vin:Taylor",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:TaylorPort",
+    "@type" : "Port",
+    "hasMaker" : "vin:Taylor"
+  }, {
+    "@id" : "vin:TexasRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:USRegion"
+  }, {
+    "@id" : "vin:TexasWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b319" ]
+    }
+  }, {
+    "@id" : "vin:Tours",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b259", "_:b309" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Loire", "_:b135" ]
+    }
+  }, {
+    "@id" : "vin:ToursRegion",
+    "@type" : "Region",
+    "locatedIn" : "vin:LoireRegion"
+  }, {
+    "@id" : "vin:USRegion",
+    "@type" : "Region"
+  }, {
+    "@id" : "vin:Ventana",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:VentanaCheninBlanc",
+    "@type" : "CheninBlanc",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:Ventana",
+    "hasSugar" : "vin:OffDry",
+    "locatedIn" : "vin:CentralCoastRegion"
+  }, {
+    "@id" : "vin:Vintage",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b340"
+  }, {
+    "@id" : "vin:VintageYear",
+    "@type" : "owl:Class"
+  }, {
+    "@id" : "vin:White",
+    "@type" : [ "WineColor", "owl:Thing" ]
+  }, {
+    "@id" : "vin:WhiteBordeaux",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b449",
+    "intersectionOf" : {
+      "@list" : [ "vin:Bordeaux", "vin:WhiteWine" ]
+    }
+  }, {
+    "@id" : "vin:WhiteBurgundy",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b367", "_:b223" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Burgundy", "vin:WhiteWine" ]
+    }
+  }, {
+    "@id" : "vin:WhiteLoire",
+    "@type" : "owl:Class",
+    "subClassOf" : "_:b101",
+    "intersectionOf" : {
+      "@list" : [ "vin:Loire", "vin:WhiteWine" ]
+    }
+  }, {
+    "@id" : "vin:WhiteNonSweetWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:WhiteWine", "_:b145" ]
+    }
+  }, {
+    "@id" : "vin:WhiteTableWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:TableWine", "_:b361" ]
+    }
+  }, {
+    "@id" : "vin:WhiteWine",
+    "@type" : "owl:Class",
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b380" ]
+    }
+  }, {
+    "@id" : "vin:WhitehallLane",
+    "@type" : "Winery"
+  }, {
+    "@id" : "vin:WhitehallLaneCabernetFranc",
+    "@type" : "CabernetFranc",
+    "hasBody" : "vin:Medium",
+    "hasFlavor" : "vin:Moderate",
+    "hasMaker" : "vin:WhitehallLane",
+    "hasSugar" : "vin:Dry",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:WhitehallLanePrimavera",
+    "@type" : "DessertWine",
+    "hasBody" : "vin:Light",
+    "hasFlavor" : "vin:Delicate",
+    "hasSugar" : "vin:Sweet",
+    "locatedIn" : "vin:NapaRegion"
+  }, {
+    "@id" : "vin:Wine",
+    "@type" : "owl:Class",
+    "label" : [ {
+      "@language" : "fr",
+      "@value" : "vin"
+    }, {
+      "@language" : "en",
+      "@value" : "wine"
+    } ],
+    "subClassOf" : [ "_:b90", "_:b105", "_:b106", "_:b107", "food:PotableLiquid", "_:b108", "_:b109", "_:b110", "_:b111" ]
+  }, {
+    "@id" : "vin:WineBody",
+    "@type" : "owl:Class",
+    "subClassOf" : "vin:WineTaste",
+    "oneOf" : {
+      "@list" : [ "vin:Light", "vin:Medium", "vin:Full" ]
+    }
+  }, {
+    "@id" : "vin:WineColor",
+    "@type" : "owl:Class",
+    "subClassOf" : "vin:WineDescriptor",
+    "oneOf" : {
+      "@list" : [ "vin:White", "vin:Rose", "vin:Red" ]
+    }
+  }, {
+    "@id" : "vin:WineDescriptor",
+    "@type" : "owl:Class",
+    "comment" : "Made WineDescriptor unionType of tastes and color",
+    "unionOf" : {
+      "@list" : [ "vin:WineTaste", "vin:WineColor" ]
+    }
+  }, {
+    "@id" : "vin:WineFlavor",
+    "@type" : "owl:Class",
+    "subClassOf" : "vin:WineTaste",
+    "oneOf" : {
+      "@list" : [ "vin:Delicate", "vin:Moderate", "vin:Strong" ]
+    }
+  }, {
+    "@id" : "vin:WineGrape",
+    "@type" : "owl:Class",
+    "subClassOf" : "food:Grape"
+  }, {
+    "@id" : "vin:WineSugar",
+    "@type" : "owl:Class",
+    "subClassOf" : "vin:WineTaste",
+    "oneOf" : {
+      "@list" : [ "vin:Sweet", "vin:OffDry", "vin:Dry" ]
+    }
+  }, {
+    "@id" : "vin:WineTaste",
+    "@type" : "owl:Class",
+    "subClassOf" : "vin:WineDescriptor"
+  }, {
+    "@id" : "vin:Winery",
+    "@type" : "owl:Class"
+  }, {
+    "@id" : "vin:Year1998",
+    "@type" : "VintageYear",
+    "yearValue" : "1998"
+  }, {
+    "@id" : "vin:Zinfandel",
+    "@type" : "owl:Class",
+    "subClassOf" : [ "_:b435", "_:b97", "_:b453", "_:b92" ],
+    "intersectionOf" : {
+      "@list" : [ "vin:Wine", "_:b35", "_:b160" ]
+    }
+  }, {
+    "@id" : "vin:ZinfandelGrape",
+    "@type" : "WineGrape"
+  }, {
+    "@id" : "vin:adjacentRegion",
+    "@type" : [ "owl:SymmetricProperty", "owl:ObjectProperty" ],
+    "domain" : "vin:Region",
+    "range" : "vin:Region"
+  }, {
+    "@id" : "vin:hasBody",
+    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ],
+    "range" : "vin:WineBody",
+    "subPropertyOf" : "vin:hasWineDescriptor"
+  }, {
+    "@id" : "vin:hasColor",
+    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ],
+    "domain" : "vin:Wine",
+    "range" : "vin:WineColor",
+    "subPropertyOf" : "vin:hasWineDescriptor"
+  }, {
+    "@id" : "vin:hasFlavor",
+    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ],
+    "range" : "vin:WineFlavor",
+    "subPropertyOf" : "vin:hasWineDescriptor"
+  }, {
+    "@id" : "vin:hasMaker",
+    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ]
+  }, {
+    "@id" : "vin:hasSugar",
+    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ],
+    "range" : "vin:WineSugar",
+    "subPropertyOf" : "vin:hasWineDescriptor"
+  }, {
+    "@id" : "vin:hasVintageYear",
+    "@type" : [ "owl:FunctionalProperty", "owl:ObjectProperty" ],
+    "domain" : "vin:Vintage",
+    "range" : "vin:VintageYear"
+  }, {
+    "@id" : "vin:hasWineDescriptor",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "vin:Wine",
+    "range" : "vin:WineDescriptor"
+  }, {
+    "@id" : "vin:locatedIn",
+    "@type" : [ "owl:TransitiveProperty", "owl:ObjectProperty" ],
+    "domain" : "owl:Thing",
+    "range" : "vin:Region"
+  }, {
+    "@id" : "vin:madeFromGrape",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "vin:Wine",
+    "range" : "vin:WineGrape",
+    "subPropertyOf" : "food:madeFromFruit"
+  }, {
+    "@id" : "vin:madeIntoWine",
+    "@type" : "owl:ObjectProperty",
+    "inverseOf" : "vin:madeFromGrape"
+  }, {
+    "@id" : "vin:producesWine",
+    "@type" : "owl:ObjectProperty",
+    "inverseOf" : "vin:hasMaker"
+  }, {
+    "@id" : "vin:yearValue",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "vin:VintageYear",
+    "range" : "xsd:positiveInteger"
+  } ],
+  "@context" : {
+    "maxCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "onProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
+      "@type" : "@id"
+    },
+    "hasBody" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody",
+      "@type" : "@id"
+    },
+    "hasFlavor" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor",
+      "@type" : "@id"
+    },
+    "hasSugar" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar",
+      "@type" : "@id"
+    },
+    "hasMaker" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker",
+      "@type" : "@id"
+    },
+    "locatedIn" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn",
+      "@type" : "@id"
+    },
+    "hasValue" : {
+      "@id" : "http://www.w3.org/2002/07/owl#hasValue",
+      "@type" : "@id"
+    },
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "@type" : "@id"
+    },
+    "oneOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#oneOf",
+      "@type" : "@id"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+      "@type" : "@id"
+    },
+    "adjacentRegion" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#adjacentRegion",
+      "@type" : "@id"
+    },
+    "intersectionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#intersectionOf",
+      "@type" : "@id"
+    },
+    "allValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#allValuesFrom",
+      "@type" : "@id"
+    },
+    "madeFromGrape" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape",
+      "@type" : "@id"
+    },
+    "cardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#cardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "distinctMembers" : {
+      "@id" : "http://www.w3.org/2002/07/owl#distinctMembers",
+      "@type" : "@id"
+    },
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
+    "inverseOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
+      "@type" : "@id"
+    },
+    "someValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom",
+      "@type" : "@id"
+    },
+    "disjointWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
+      "@type" : "@id"
+    },
+    "minCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "priorVersion" : {
+      "@id" : "http://www.w3.org/2002/07/owl#priorVersion",
+      "@type" : "@id"
+    },
+    "differentFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#differentFrom",
+      "@type" : "@id"
+    },
+    "yearValue" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#yearValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+    },
+    "hasColor" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor",
+      "@type" : "@id"
+    },
+    "unionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+      "@type" : "@id"
+    },
+    "hasVintageYear" : {
+      "@id" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear",
+      "@type" : "@id"
+    },
+    "@vocab" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "vin" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "food" : "http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#"
+  }
+}
